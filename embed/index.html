@@ -5,10 +5,13 @@
     <title>GumGum - JavaScript Engineering Skill Test - Embedded JS code</title>
 </head>
 <body>
-    <p>Create a censoring bookmarklet, when used on any of the test pages it will:</p>
-    <p>- Detect all the images and place a red square over them regardless of their styles.</p>
-    <p>- Create a button, which should be always visible, when clicked all the red squares should be removed.</p>
-    <p>- Test on these images:</p>
+    <h1>Embeddable JavaScript</h1>
+    <p>You're asked to create a censoring bookmarklet, with the following features:</p>
+    <ul>
+        <li>It will detect all the images in a webpage and will place a "censoring square" (a red square will suffice) over them regardless of the image styling.</li>
+        <li>It will display an always-visible button to remove all the squares.</li>
+        <li>When used on this page, three squares will show up.</li>
+    </ul>
     <div style="text-align:center">
         <img src="http://placehold.it/350x150">
     </div>
@@ -18,10 +21,17 @@
     <div>
         <img src="http://placehold.it/250x250" style="position:absolute;right:0;bottom:0">
     </div>
-    <p>Bonuses:</p>
-    <p>- It works on dynamically added images.</p>
-    <p>- Responds well to browser resize.</p>
-    <p>- Fail gracefully with good error handling.</p>
-    <p>- Doesn't clutter the global scope/namespace.</p>
+    <h2>Rules</h2>
+    <ul>
+        <li>No jQuery</li>
+    </ul>
+    <h2>Bonuses</h2>
+    <ul>
+        <li>Doesn't clutter the global scope/namespace.</li>
+        <li>Fail gracefully with good error handling.</li>
+        <li>Responds well to browser resize.</li>
+        <li>It works with dynamically added images.</li>
+        <li>It works on all browsers, back to IE7 and with mobile browsers too.</li>
+    </ul>
 </body>
 </html>

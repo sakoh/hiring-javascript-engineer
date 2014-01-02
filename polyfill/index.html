@@ -5,11 +5,17 @@
     <title>GumGum - JavaScript Engineering Skill Test - Quiz</title>
 </head>
 <body>
-    <p>Mr. Crazy Banker asked us for a polyfill so whenever you get out of text fields they prompt for confirmation.</p>
-    <p>If they cancel, the field is emptied. Otherwise the value remains.</p>
-    <input type="text" id="gumgum" value="Please polyfill me!">
-    <p>Pluses:</p>
-    <p>- No 3rd party libs.</p>
-    <p>- Works for dynamically added input elements.</p>
+    <h1>Browser Polyfills</h1>
+    <p>Mr. Crazy Banker asked us to "improve" the UI for clients, so whenever you get out of any text field, it prompts for confirmation of its value.</p>
+    <p>On cancel, the field is emptied. Otherwise the value remains.</p>
+    <form>
+        <p>Name: <input type="text"></p>
+        <p>Last Name: <input type="text"></p>
+    </form>
+    <h2>Pluses:</h2>
+    <ul>
+        <li>No jQuery or any other 3rd party libs.</li>
+        <li>Works for dynamically added input elements.</li>
+    </ul>
 </body>
 </html>
