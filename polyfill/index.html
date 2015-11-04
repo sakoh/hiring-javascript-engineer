@@ -9,13 +9,22 @@
     <p>Mr. Crazy Banker asked us to "improve" the UI for clients, so whenever you get out of any text field, it prompts for confirmation of its value.</p>
     <p>On cancel, the field is emptied. Otherwise the value remains.</p>
     <form>
-        <p>Name: <input type="text"></p>
-        <p>Last Name: <input type="text"></p>
+        <p>Name: <input name='input' type="text" onfocusout="confirmValue(0)"></p>
+        <p>Last Name: <input name='input' type="text" onfocusout="confirmValue(1)"></p>
     </form>
     <h2>Pluses:</h2>
     <ul>
         <li>No jQuery or any other 3rd party libs.</li>
         <li>Works for dynamically added input elements.</li>
     </ul>
+    <script type="text/javascript" charset="utf-8">
+      function confirmValue (i) {
+        var bool = confirm('Is that your value?');
+
+        if(!bool) document.getElementsByName('input')[i].value = '';
+      }
+
+
+    </script>
 </body>
 </html>
