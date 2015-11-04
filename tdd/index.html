@@ -23,5 +23,40 @@
         <li>Write a brief explanation of your OO pattern.</li>
         <li>Canvas</li>
     </ul>
+    <div id="robots">
+        
+    </div>
+    <script>
+        var Robot = function (name, greeting){
+            return {
+                name: name,
+                greeting: greeting,
+                talksTo: function(anotherRobot){
+                    return "Hello " + anotherRobot.name + " how are you?";
+                }
+            }       
+        }
+
+        var tom = new Robot('Tom', 'Hello Jim');
+        var jim = new Robot('Jim', 'Hello Tom');
+
+        function expect(explanation, expectedGreeting, actualGreeting){
+            if(expectedGreeting === actualGreeting) {
+                document.getElementById('robots').style.color = 'green'; 
+            } else {
+                document.getElementById('robots').style.color = 'red'; 
+            }
+
+            document.getElementById('robots').innerHTML += explanation + '</br>';
+        }
+
+        expect("Tom's name equals 'Tom' ","Tom", tom.name);
+        expect("Jim's name equals 'Jim' ","Jim", jim.name);
+        expect("Tom's greeting equals 'Hello Jim' ","Hello Jim", tom.greeting);
+        expect("Jim's greeting equals 'Hello Tom' ","Hello Tom", jim.greeting);
+        expect("Tom's says to Jim 'Hello Jim how are you?' ","Hello Jim how are you?", tom.talksTo(jim));
+
+
+    </script>
 </body>
 </html>
