@@ -10,15 +10,15 @@
     <table border="1">
         <tr>
             <td align="center" rowspan="2">
-                <img src="http://placehold.it/250x250&text=Picture">
-                <br>My Name
+                <img id='image' src="http://placehold.it/250x250&text=Picture">
+                <br> <div id='name'>My Name</div>
             </td>
-            <td>My Bio ... blablabla</td>
+            <td id='bio'>My Bio ... blablabla</td>
         </tr>
         <tr>
             <td>
-                <p>My Public Repos: 100</p>
-                <p>My Followers: 10000</p>
+                <p>My Public Repos: <span id='public_repos'>100</span></p>
+                <p>My Followers: <span id='followers'>10000</span></p>
             </td>
         </tr>
     </table>
@@ -35,5 +35,15 @@
         <li>No 3rd party libs.</li>
         <li>Use a new/trendy MVC-like lib for this.</li>
     </ul>
+    <script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
+    <script>
+        $.getJSON('https://api.github.com/users/sakoh', function(data){
+            $('#name').html(data['name']);
+            $('#bio').html(data['bio']);
+            $('#image').attr("src", data['avatar_url']);
+            $('#public_repos').html(data['public_repos']);
+            $('#followers').html(data['followers']);
+        });
+    </script>
 </body>
 </html>

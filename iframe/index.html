@@ -7,11 +7,11 @@
 <body>
     <h1>About Iframes</h1>
     <p>One of your clients requires that everything he types and submits into a form is transfered into an iframe, to avoid the NSA.</p>
-    <form>
-        <input type="text" value="Send me to the iframe!">
+    <form onsubmit='sendToIFrame()'>
+        <input id='input' type="text" value="Send me to the iframe!" >
         <input type="submit">
     </form>
-    <iframe src="about:blank" frameborder="1" width="600" height="100"></iframe>
+    <iframe id='iframe' src="about:blank" frameborder="1" width="600" height="100"></iframe>
     <h2>Rules</h2>
     <ul>
         <li>No server side processing</li>
@@ -22,5 +22,10 @@
         <li>Explain your technique</li>
         <li>No extra files</li>
     </ul>
+    <script>
+        function sendToIFrame(){
+            document.getElementById("iframe")[0].src = document.getElementById('input')[0].value;
+        }
+    </script>
 </body>
 </html>
